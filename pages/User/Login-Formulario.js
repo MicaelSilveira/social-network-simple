@@ -7,7 +7,7 @@ const LoginForm = () => {
       <h1>Login</h1>
       <form action="">
         <Input label="Usuario" type="text" />
-        <Input label="Usuario" type="password" />
+        <Input label="Senha" type="password" />
       </form>
     </section>
   );
