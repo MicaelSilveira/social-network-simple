@@ -5,7 +5,7 @@ import useForm from "../../src/Components/Hooks/useForm";
 import { USER_POST } from "../../src/Components/api";
 
 import Head from "next/head";
-const LoginCriarUsuario = ({ userLogin }) => {
+const LoginCriarUsuario = ({ userLogin, loading }) => {
   const email = useForm("email");
   const username = useForm();
   const password = useForm(false);
@@ -31,7 +31,11 @@ const LoginCriarUsuario = ({ userLogin }) => {
         <Input label="Usuario" type="text" name="username" {...username} />
         <Input label="Email" type="email" name="email" {...email} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Cadastrar</Button>
+        {loading ? (
+          <Button disabled>carregando...</Button>
+        ) : (
+          <Button>Cadastre-se</Button>
+        )}
       </form>
     </section>
   );
