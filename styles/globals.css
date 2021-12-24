@@ -6,6 +6,43 @@ body {
   color: #333;
   font-family: var(--type-first);
 }
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.4s forwards;
+  padding: 10px;
+}
+.title {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 5px;
+  position: relative;
+  z-index: 1;
+}
+.title::after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgb(255, 221, 71);
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  border-radius: 0.2rem;
+  z-index: -1;
+}
+@keyframes animeLeft {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
+.error {
+  color: red;
+  padding: 10px 10px;
+  font-weight: bold;
+}
 h1,
 h2,
 h3,
