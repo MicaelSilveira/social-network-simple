@@ -2,10 +2,17 @@ import React from "react";
 import Button from "../../src/Components/Forms/Button";
 import Input from "../../src/Components/Forms/Input";
 import useForm from "../../src/Components/Hooks/useForm";
-import { TOKEN_POST } from "../../src/api";
+import { TOKEN_POST, USER_GET } from "../../src/api";
+
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
+  async function getUser(token) {
+    const { url, options } = USER_GET(token);
+    const response = await fetch(url, options);
+    const json = await response.json();
+    console.log(json);
+  }
   async function handleSubmit(event) {
     event.preventDefault();
     if (username.validade() && password.validade()) {
@@ -15,7 +22,8 @@ const LoginForm = () => {
       });
       const response = await fetch(url, options);
       const json = await response.json();
-      console.log(json);
+      window.localStorage.setItem("token", json.token);
+      getUser(json.token);
     }
   }
   return (
