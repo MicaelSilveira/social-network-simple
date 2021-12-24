@@ -15,7 +15,7 @@ const Header = ({ data, userLogout }) => {
           </a>
         </Link>
         {data ? (
-          <Link href={`/Account/${data.nome}`}>
+          <Link href={`/Account/@${data.nome}`}>
             <a className={styles.login}>
               <strong>@{data.nome}</strong>
             </a>
