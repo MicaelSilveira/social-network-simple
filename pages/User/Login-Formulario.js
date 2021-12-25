@@ -15,23 +15,32 @@ const LoginForm = ({ userLogin, loading, erro }) => {
     }
   }
   return (
-    <section className="animeLeft">
-      <h1 className="title">Login</h1>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Usuario" type="text" name="usuario" {...username} />
+    <div className={`${styles.login} animeLeft`}>
+      <section>
+        <h1 className="title">Login</h1>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <Input label="Usuario" type="text" name="usuario" {...username} />
 
-        <Input label="Senha" type="password" name="senha" {...password} />
-        {loading ? (
-          <Button disabled>Carregando...</Button>
-        ) : (
-          <Button>Entrar</Button>
-        )}
-        <Error error={erro} />
-      </form>
-      <Link href="/User/Login-SenhaPerdida">
-        <a className={styles.perdeu}>Perdeu a Senha?</a>
-      </Link>
-    </section>
+          <Input label="Senha" type="password" name="senha" {...password} />
+          {loading ? (
+            <Button disabled>Carregando...</Button>
+          ) : (
+            <Button>Entrar</Button>
+          )}
+          <Error error={erro} />
+        </form>
+        <Link href="/User/Login-SenhaPerdida">
+          <a className={styles.perdeu}>Perdeu a Senha?</a>
+        </Link>
+        <div className={styles.cadastro}>
+          <h2 className={styles.subtitle}>Cadastre-se</h2>
+          <p>Ainda não possui conta ?</p>
+          <Link href="/User/Login-CriarUsuario">
+            <Button>Cadastro</Button>
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 };
 

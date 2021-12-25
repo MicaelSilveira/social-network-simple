@@ -13,13 +13,6 @@ const Login = ({ userLogin, loading, erro }) => {
       {/* <Header /> */}
       <LoginFormulario userLogin={userLogin} loading={loading} erro={erro} />
       {/* <Footer /> */}
-      <div className={styles.cadastro}>
-        <h2 className={styles.subtitle}>Cadastre-se</h2>
-        <p>Ainda não possui conta ?</p>
-        <Link href="/User/Login-CriarUsuario">
-          <Button>Cadastro</Button>
-        </Link>
-      </div>
     </div>
   );
 };

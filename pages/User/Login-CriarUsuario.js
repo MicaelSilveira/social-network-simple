@@ -3,6 +3,7 @@ import Input from "../../src/Components/Forms/Input";
 import Button from "../../src/Components/Forms/Button";
 import useForm from "../../src/Components/Hooks/useForm";
 import { USER_POST } from "../../src/Components/api";
+import styles from "../../styles/Login-Criar.module.css";
 
 import Head from "next/head";
 const LoginCriarUsuario = ({ userLogin, loading }) => {
@@ -22,22 +23,24 @@ const LoginCriarUsuario = ({ userLogin, loading }) => {
     }
   }
   return (
-    <section className="animeLeft">
-      <Head>
-        <title>Login | CriarUsuario</title>
-      </Head>
-      <h1 className="title">Cadastre-se</h1>
-      <form onSubmit={handleSubmit}>
-        <Input label="Usuario" type="text" name="username" {...username} />
-        <Input label="Email" type="email" name="email" {...email} />
-        <Input label="Senha" type="password" name="password" {...password} />
-        {loading ? (
-          <Button disabled>carregando...</Button>
-        ) : (
-          <Button>Cadastre-se</Button>
-        )}
-      </form>
-    </section>
+    <div className={`${styles.cadastro} animeLeft`}>
+      <section>
+        <Head>
+          <title>Login | CriarUsuario</title>
+        </Head>
+        <h1 className="title">Cadastre-se</h1>
+        <form onSubmit={handleSubmit}>
+          <Input label="Usuario" type="text" name="username" {...username} />
+          <Input label="Email" type="email" name="email" {...email} />
+          <Input label="Senha" type="password" name="password" {...password} />
+          {loading ? (
+            <Button disabled>carregando...</Button>
+          ) : (
+            <Button>Cadastre-se</Button>
+          )}
+        </form>
+      </section>
+    </div>
   );
 };
 
