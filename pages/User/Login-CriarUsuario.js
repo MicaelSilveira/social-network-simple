@@ -6,7 +6,10 @@ import { USER_POST } from "../../src/Components/api";
 import styles from "../../styles/Login-Criar.module.css";
 
 import Head from "next/head";
-const LoginCriarUsuario = ({ userLogin, loading }) => {
+import { useRouter } from "next/router";
+const LoginCriarUsuario = ({ userLogin, loading, login, data }) => {
+  const router = useRouter();
+  if (login) router.push(`/Account/@${data.username}`);
   const email = useForm("email");
   const username = useForm();
   const password = useForm(false);

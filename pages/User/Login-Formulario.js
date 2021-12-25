@@ -5,7 +5,10 @@ import useForm from "../../src/Components/Hooks/useForm";
 import Error from "../../src/Components/Helper/Error";
 import styles from "../../styles/Login-Form.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 const LoginForm = ({ userLogin, loading, erro }) => {
+  const router = useRouter();
+  if (login) router.push(`/Account/@${data.username}`);
   const username = useForm();
   const password = useForm();
   async function handleSubmit(event) {
