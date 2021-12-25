@@ -4,10 +4,12 @@ import Button from "../../src/Components/Forms/Button";
 import useForm from "../../src/Components/Hooks/useForm";
 import { USER_POST } from "../../src/Components/api";
 import styles from "../../styles/Login-Criar.module.css";
-
+import Error from "../../src/Components/Helper/Error";
 import Head from "next/head";
 import { useRouter } from "next/router";
-const LoginCriarUsuario = ({ userLogin, loading, login, data }) => {
+import useFetch from "../../src/Components/Hooks/useFetch";
+const LoginCriarUsuario = ({ userLogin, login, data }) => {
+  const { loading, request, error } = useFetch();
   const router = useRouter();
   if (login) router.push(`/Account/@${data.username}`);
   const email = useForm("email");
@@ -21,7 +23,7 @@ const LoginCriarUsuario = ({ userLogin, loading, login, data }) => {
         password: password.value,
         email: email.value,
       });
-      const response = await fetch(url, options);
+      const { response } = await request(url, options);
       if (response.ok) userLogin(username.value, password.value);
     }
   }
@@ -37,11 +39,12 @@ const LoginCriarUsuario = ({ userLogin, loading, login, data }) => {
           <Input label="Email" type="email" name="email" {...email} />
           <Input label="Senha" type="password" name="password" {...password} />
           {loading ? (
-            <Button disabled>carregando...</Button>
+            <Button disabled>Cadastrando...</Button>
           ) : (
             <Button>Cadastre-se</Button>
           )}
         </form>
+        <Error error={error} />
       </section>
     </div>
   );
