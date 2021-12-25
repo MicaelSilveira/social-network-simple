@@ -72,6 +72,12 @@ input {
   padding: 0 1rem;
   margin: 0 auto;
 }
+.loading {
+  font-family: var(--type-second);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0 20px 0;
+}
 a {
   color: inherit;
   text-decoration: none;
