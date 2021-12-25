@@ -10,3 +10,11 @@
   background: url("../src/Assets/login3.jpg") no-repeat center center;
   background-size: cover;
 }
+@media (max-width: 40rem) {
+  .cadastro {
+    grid-template-columns: 1fr;
+  }
+  .cadastro::before {
+    display: none;
+  }
+}
