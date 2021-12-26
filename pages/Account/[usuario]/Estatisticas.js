@@ -1,13 +1,14 @@
 import React from "react";
 import Head from "next/head";
 
-const Estatisticas = () => {
+const Estatisticas = ({ data }) => {
+  const userName = data.nome;
   return (
     <div className="animeLeft">
       <Head>
-        <title> | Estatisticas</title>
+        <title> @{userName} | Estatisticas</title>
       </Head>
-      Estatisticas
+      <h1 className="title">Minhas fotos</h1>
     </div>
   );
 };
