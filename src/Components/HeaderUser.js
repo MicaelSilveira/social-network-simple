@@ -11,7 +11,7 @@ const HeaderUser = ({ userName, userLogout }) => {
     <nav className={`${styles.nav} animeDown`}>
       <ul>
         <li>
-          <Link href={`/Account/@${userName}/MinhasFotos`}>
+          <Link href={`/Account/@${userName}/Minhas-Fotos`}>
             <a>
               <Image src={Feed} />
             </a>
