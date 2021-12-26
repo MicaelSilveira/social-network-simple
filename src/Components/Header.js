@@ -3,8 +3,8 @@ import styles from "./Header.module.css";
 import React from "react";
 import Image from "next/image";
 import Logo from "../Assets/Logo.svg";
-
-const Header = ({ data, headerUser, setHeaderUser }) => {
+import HeaderUser from "./HeaderUser";
+const Header = ({ data, headerUser, setHeaderUser, userLogout }) => {
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
@@ -21,25 +21,7 @@ const Header = ({ data, headerUser, setHeaderUser }) => {
               </a>
             </Link>
             {headerUser && (
-              <nav className={`${styles.headerUser} animeDown`}>
-                <ul className={`${styles.ulHeader}`}>
-                  <li>
-                    <Link href={`/Account/@${data.nome}/Estatisticas`}>
-                      <a>estatisticas</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/Account/@${data.nome}/Estatisticas`}>
-                      <a>Postar foto</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/Account/@${data.nome}/Estatisticas`}>
-                      <a>Feed</a>
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
+              <HeaderUser userName={data.nome} userLogout={userLogout} />
             )}
           </>
         ) : (

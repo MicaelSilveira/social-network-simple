@@ -1,0 +1,25 @@
+.nav ul {
+  display: flex;
+  gap: 2rem;
+}
+.nav a,
+.nav button {
+  background: #eee;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.nav a:hover,
+.nav button:hover,
+.nav a:focus,
+.nav a:focus {
+  box-shadow: 0 0 0 3px #eee;
+  border-color: #333;
+  outline: none;
+}
