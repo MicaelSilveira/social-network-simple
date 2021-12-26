@@ -6,6 +6,17 @@ body {
   color: #333;
   font-family: var(--type-first);
 }
+.animeDown {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeDown 0.5s forwards;
+}
+@keyframes animeDown {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
 .animeLeft {
   opacity: 0;
   transform: translateX(-20px);
