@@ -50,7 +50,6 @@ function MyApp({ Component }) {
     const json = await response.json();
     setData(json);
     setLogin(true);
-    router.push(`/Account/@${json.username}`);
   }
   async function userLogin(username, password) {
     try {
