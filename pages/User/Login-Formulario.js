@@ -18,8 +18,8 @@ const LoginForm = ({ userLogin, loading, erro, login, data }) => {
     }
   }
   return (
-    <div className={`${styles.login} animeLeft`}>
-      <section>
+    <div className={`${styles.login} margin`}>
+      <section className="animeLeft">
         <h1 className="title">Login</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Input label="Usuario" type="text" name="usuario" {...username} />
