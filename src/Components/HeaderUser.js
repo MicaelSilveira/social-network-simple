@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 import styles from "./HeaderUser.module.css";
 import Image from "next/image";
-import Feed from "../Assets/Feed.svg";
-import AdicionarFoto from "../Assets/Adicionar.svg";
-import Sair from "../Assets/Sair.svg";
-import Estatic from "../Assets/Estatisticas.svg";
+import Feed from "../Assets/feed.svg";
+import AdicionarFoto from "../Assets/adicionar.svg";
+import Sair from "../Assets/sair.svg";
+import Estatic from "../Assets/estatisticas.svg";
 const HeaderUser = ({ userName, userLogout }) => {
   return (
     <nav className={`${styles.nav} animeDown`}>
