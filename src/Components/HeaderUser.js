@@ -7,14 +7,16 @@ import AdicionarFoto from "../Assets/adicionar.svg";
 import Sair from "../Assets/sair.svg";
 import Estatic from "../Assets/estatisticas.svg";
 const HeaderUser = ({ userName, userLogout }) => {
+  function MobileEvent({ target }) {
+    target.classList.toggle("mobileActive");
+    target.nextElementSibling.classList.toggle("mobileActive");
+  }
   return (
     <>
       <button
         className="mobileButton"
-        onClick={({ target }) => {
-          target.classList.toggle("mobileActive");
-          target.nextElementSibling.classList.toggle("mobileActive");
-        }}
+        onClick={MobileEvent}
+        onTouchStart={MobileEvent}
       ></button>
       <nav className={`navHeaderUser animeDown`}>
         <ul>
