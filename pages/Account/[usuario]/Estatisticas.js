@@ -9,7 +9,7 @@ const Estatisticas = ({ data }) => {
         <Head>
           <title> @{userName} | Estatisticas</title>
         </Head>
-        <h1 className="title">Minhas fotos</h1>
+        <h1 className="title">Estatisticas</h1>
       </div>
     );
   } else return null;

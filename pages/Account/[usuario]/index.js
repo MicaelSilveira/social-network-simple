@@ -1,8 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Link from "next/link";
-import Button from "../../../src/Components/Forms/Button";
-const usuario = ({ data, userLogout }) => {
+const usuario = ({ data }) => {
   if (data) {
     const userName = data.nome;
     return (
@@ -11,11 +9,6 @@ const usuario = ({ data, userLogout }) => {
           <title>{`Conta | @${userName}`}</title>
         </Head>
         <h1>Bem vindo: {userName}</h1>
-
-        <Link href={`@${userName}/Estatisticas`}>
-          <a>Estatisticas</a>
-        </Link>
-        <Button onClick={userLogout}>Sair</Button>
       </div>
     );
   } else return null;

@@ -89,3 +89,85 @@ a {
 * {
   box-sizing: border-box;
 }
+.navHeaderUser ul {
+  display: flex;
+  gap: 2rem;
+}
+.navHeaderUser a,
+.navHeaderUser button {
+  background: #eee;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.navHeaderUser a:hover,
+.navHeaderUser button:hover,
+.navHeaderUser a:focus,
+.navHeaderUser a:focus,
+.mobileButton:hover {
+  box-shadow: 0 0 0 3px #eee;
+  border-color: #333;
+  outline: none;
+}
+.mobileButton:hover {
+  box-shadow: 0 0 0 3px #eee;
+  border-color: #333;
+  outline: none;
+}
+
+.mobileButton {
+  background: #eee;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  display: none;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.mobileButton::after {
+  transition: 0.2s;
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+}
+.mobileActive::after {
+  transform: rotate(90deg);
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 8px currentColor, 0 -8px currentColor;
+}
+@media (max-width: 40rem) {
+  .navHeaderUser {
+    display: none;
+    position: absolute;
+    right: 15px;
+  }
+  .navHeaderUser.mobileActive ul {
+    position: absolute;
+    right: 0px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    top: 40px;
+  }
+  .navHeaderUser.mobileActive {
+    display: block;
+  }
+  .mobileButton {
+    display: flex;
+  }
+}
