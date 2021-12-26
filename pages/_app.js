@@ -80,7 +80,11 @@ function MyApp({ Component }) {
 
   return (
     <>
-      <Header data={data} />
+      <Header
+        data={data}
+        headerUser={headerUser}
+        setHeaderUser={setHeaderUser}
+      />
       <Component
         userLogin={userLogin}
         erro={error}
