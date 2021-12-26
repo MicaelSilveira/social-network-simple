@@ -3,7 +3,7 @@ import Head from "next/head";
 
 const Estatisticas = () => {
   return (
-    <div>
+    <div className="animeLeft">
       <Head>
         <title> | Estatisticas</title>
       </Head>
