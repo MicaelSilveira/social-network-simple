@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import Button from "../../../src/Components/Forms/Button";
 const usuario = ({ data, userLogout }) => {
   if (data) {
