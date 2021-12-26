@@ -15,7 +15,14 @@ function MyApp({ Component }) {
   const [login, setLogin] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
-
+  const [headerUser, setHeaderUser] = React.useState(false);
+  React.useEffect(() => {
+    router.events.on("routeChangeStart", (url) => {
+      if (url === "/") {
+        setHeaderUser(false);
+      }
+    });
+  }, [router]);
   const userLogout = React.useCallback(async function () {
     setLogin(false);
     setData(null);
