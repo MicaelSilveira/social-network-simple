@@ -13,11 +13,7 @@ const HeaderUser = ({ userName, userLogout }) => {
   }
   return (
     <>
-      <button
-        className="mobileButton"
-        onClick={MobileEvent}
-        onTouchStart={MobileEvent}
-      ></button>
+      <button className="mobileButton" onClick={MobileEvent}></button>
       <nav className={`navHeaderUser animeDown`}>
         <ul>
           <li>
