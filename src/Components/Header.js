@@ -17,7 +17,7 @@ const Header = ({ data, headerUser, setHeaderUser }) => {
           <>
             <Link href={`/Account/@${data.nome}`}>
               <a onClick={() => setHeaderUser(true)} className={styles.login}>
-                <strong>@{data.nome}</strong>
+                <strong>{headerUser ? `@${data.nome}` : "Sua Conta"}</strong>
               </a>
             </Link>
             {headerUser && (
