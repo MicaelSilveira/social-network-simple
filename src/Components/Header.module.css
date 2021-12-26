@@ -6,6 +6,10 @@
   background: white;
   top: 0px;
 }
+.ulHeader {
+  display: flex;
+  gap: 2rem;
+}
 .nav {
   display: flex;
   justify-content: space-between;

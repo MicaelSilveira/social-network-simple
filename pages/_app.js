@@ -15,6 +15,14 @@ function MyApp({ Component }) {
   const [login, setLogin] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
+  const [headerUser, setHeaderUser] = React.useState(false);
+  React.useEffect(() => {
+    router.events.on("routeChangeStart", (url) => {
+      if (url === "/") {
+        setHeaderUser(false);
+      }
+    });
+  }, [router]);
   const userLogout = React.useCallback(async function () {
     setLogin(false);
     setData(null);
@@ -50,6 +58,7 @@ function MyApp({ Component }) {
     const json = await response.json();
     setData(json);
     setLogin(true);
+    setHeaderUser(true);
   }
   async function userLogin(username, password) {
     try {
@@ -71,13 +80,18 @@ function MyApp({ Component }) {
 
   return (
     <>
-      <Header data={data} userLogout={userLogout} />
+      <Header
+        data={data}
+        headerUser={headerUser}
+        setHeaderUser={setHeaderUser}
+      />
       <Component
         userLogin={userLogin}
         erro={error}
         login={login}
         loading={loading}
         data={data}
+        userLogout={userLogout}
       />
       <Footer />
     </>
