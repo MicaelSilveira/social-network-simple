@@ -85,6 +85,7 @@ function MyApp({ Component }) {
         headerUser={headerUser}
         setHeaderUser={setHeaderUser}
         userLogout={userLogout}
+        loading={loading}
       />
       <Component
         userLogin={userLogin}

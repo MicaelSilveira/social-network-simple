@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../Assets/Logo.svg";
 import HeaderUser from "./HeaderUser";
-const Header = ({ data, headerUser, setHeaderUser, userLogout }) => {
+const Header = ({ data, headerUser, setHeaderUser, userLogout, loading }) => {
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
@@ -13,6 +13,7 @@ const Header = ({ data, headerUser, setHeaderUser, userLogout }) => {
             <Image src={Logo} className={styles.logo} />
           </a>
         </Link>
+        {loading && <h1 className="loading animeLeft">Aguarde...</h1>}
         {data ? (
           <>
             <Link href={`/Account/@${data.nome}`}>
