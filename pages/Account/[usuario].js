@@ -3,7 +3,7 @@ import Head from "next/head";
 const usuario = ({ data }) => {
   if (data)
     return (
-      <div className="animeLeft"style={{height='100vh'}}>
+      <div className="animeLeft" style={{ height: "100vh" }}>
         <Head>
           <title>{`Account | ${data.username}`}</title>
         </Head>
