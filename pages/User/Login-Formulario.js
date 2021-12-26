@@ -6,6 +6,7 @@ import Error from "../../src/Components/Helper/Error";
 import styles from "../../styles/Login-Form.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Head from "next/head";
 const LoginForm = ({ userLogin, loading, erro, login, data }) => {
   const router = useRouter();
   if (login) router.push(`/Account/@${data.username}`);
@@ -19,6 +20,9 @@ const LoginForm = ({ userLogin, loading, erro, login, data }) => {
   }
   return (
     <div className={`${styles.login} margin`}>
+      <Head>
+        <title>Login | Formulario</title>
+      </Head>
       <section className="animeLeft">
         <h1 className="title">Login</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
