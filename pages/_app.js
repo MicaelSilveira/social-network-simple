@@ -21,7 +21,7 @@ function MyApp({ Component }) {
     setError(null);
     setLoading(false);
     window.localStorage.removeItem("token");
-    router.push("/User/Login-Home");
+    router.push("/User/Login-Formulario");
   }, []);
   React.useEffect(() => {
     async function autoLogin() {
