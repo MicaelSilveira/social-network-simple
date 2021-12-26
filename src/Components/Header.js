@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import React from "react";
 import Image from "next/image";
-import Logo from "../Assets/dogs.svg";
+import Logo from "../Assets/Logo.svg";
 import Button from "./Forms/Button";
 
 const Header = ({ data, userLogout }) => {
