@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../Assets/Logo.svg";
 
-const Header = ({ data, headerUser, setHeaderUser }) => {
+const Header = ({ data }) => {
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
@@ -14,34 +14,11 @@ const Header = ({ data, headerUser, setHeaderUser }) => {
           </a>
         </Link>
         {data ? (
-          <>
-            <Link href={`/Account/@${data.nome}`}>
-              <a onClick={() => setHeaderUser(true)} className={styles.login}>
-                <strong>@{data.nome}</strong>
-              </a>
-            </Link>
-            {headerUser && (
-              <nav className={`${styles.headerUser} animeDown`}>
-                <ul className={`${styles.ulHeader}`}>
-                  <li>
-                    <Link href={`/Account/@${data.nome}/Estatisticas`}>
-                      <a>estatisticas</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/Account/@${data.nome}/Estatisticas`}>
-                      <a>Postar foto</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/Account/@${data.nome}/Estatisticas`}>
-                      <a>Feed</a>
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            )}
-          </>
+          <Link href={`/Account/@${data.nome}`}>
+            <a className={styles.login}>
+              <strong>@{data.nome}</strong>
+            </a>
+          </Link>
         ) : (
           <Link href="/User/Login-Formulario">
             <a className={styles.login}>Login / Criar</a>

@@ -15,7 +15,6 @@ function MyApp({ Component }) {
   const [login, setLogin] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
-  const [headerUser, setHeaderUser] = React.useState(false);
 
   const userLogout = React.useCallback(async function () {
     setLogin(false);
@@ -74,11 +73,7 @@ function MyApp({ Component }) {
 
   return (
     <>
-      <Header
-        data={data}
-        headerUser={headerUser}
-        setHeaderUser={setHeaderUser}
-      />
+      <Header data={data} />
       <Component
         userLogin={userLogin}
         erro={error}
