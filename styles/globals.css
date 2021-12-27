@@ -169,11 +169,11 @@ a {
   }
   .navHeaderUser.mobileActive ul {
     position: absolute;
-    right: 0px;
+    right: 2px;
     gap: 10px;
     display: flex;
     flex-direction: column;
-    top: 40px;
+    top: 33px;
     gap: 1rem;
   }
   .navHeaderUser.mobileActive {
