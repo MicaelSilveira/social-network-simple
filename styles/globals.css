@@ -167,6 +167,9 @@ a {
     position: absolute;
     right: 15px;
   }
+  .navHeaderUser.mobileActive ul li {
+    margin: 5px;
+  }
   .navHeaderUser.mobileActive ul {
     position: absolute;
     right: 2px;
