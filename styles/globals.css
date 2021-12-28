@@ -169,6 +169,8 @@ a {
   }
   .navHeaderUser.mobileActive ul li {
     margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
   }
   .navHeaderUser.mobileActive ul {
     position: absolute;
@@ -184,5 +186,7 @@ a {
   }
   .mobileButton {
     display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
   }
 }

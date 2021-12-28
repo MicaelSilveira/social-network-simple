@@ -8,7 +8,7 @@ import Error from "../../src/Components/Helper/Error";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import useFetch from "../../src/Components/Hooks/useFetch";
-const LoginCriarUsuario = ({ userLogin, loading, login, data }) => {
+const LoginCriarUsuario = ({ userLogin, login, data }) => {
   const { loadingFetch, request, error } = useFetch();
   const router = useRouter();
   if (login) router.push(`/Account/@${data.username}`);
@@ -35,7 +35,6 @@ const LoginCriarUsuario = ({ userLogin, loading, login, data }) => {
         </Head>
         <h1 className="title">Cadastre-se</h1>
         <form onSubmit={handleSubmit}>
-          {loading && <p className="loading animeLeft">Logando...</p>}
           <Input label="Usuario" type="text" name="username" {...username} />
           <Input label="Email" type="email" name="email" {...email} />
           <Input label="Senha" type="password" name="password" {...password} />
