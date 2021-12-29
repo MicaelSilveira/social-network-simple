@@ -37,7 +37,12 @@ const FeedPhotos = () => {
     return (
       <ul className={`${styles.feed} animeLeft`}>
         {dataFetch.map((photo) => {
-          return <FeedPhotoItem key={photo.id} photo={photo} />;
+          return (
+            <li key={photo.id}>
+              <img src={photo.src} alt={photo.title} />
+              <span>{photo.title}</span>
+            </li>
+          );
         })}
       </ul>
     );

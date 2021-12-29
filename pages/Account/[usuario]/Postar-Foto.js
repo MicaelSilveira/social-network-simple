@@ -11,11 +11,8 @@ const PostarFoto = ({ data }) => {
   const nome = useForm();
   const [img, setImg] = React.useState({});
   const { dataFetch, error, loadingFetch, request } = useFetch();
-  React.useEffect(() => {
+  async function handleSubmit(event) {
     const username = data.username;
-    if (dataFetch) router.push(`/Account/@${username}/Minhas-Fotos`);
-  }, [dataFetch]);
-  function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData();
     formData.append("img", img.raw);
@@ -25,7 +22,8 @@ const PostarFoto = ({ data }) => {
 
     const token = window.localStorage.getItem("token");
     const { url, options } = PHOTO_POST(formData, token);
-    request(url, options);
+    const { response } = await request(url, options);
+    if (response.ok) router.push(`/Account/@${username}/Minhas-Fotos`);
   }
   function handleChange({ target }) {
     setImg({
