@@ -33,9 +33,9 @@ const PostarFoto = ({ data }) => {
   }
   if (data) {
     return (
-      <>
+      <div className="animeLeft">
         <h1 className="title">Postar Foto</h1>
-        <section className={`${styles.photoPost} animeLeft`}>
+        <section className={`${styles.photoPost}`}>
           <form onSubmit={handleSubmit}>
             <Input label="Nome" type="text" name="name" {...nome} />
             <input
@@ -60,7 +60,7 @@ const PostarFoto = ({ data }) => {
             )}
           </div>
         </section>
-      </>
+      </div>
     );
   } else return null;
 };
