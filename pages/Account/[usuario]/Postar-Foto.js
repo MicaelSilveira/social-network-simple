@@ -14,7 +14,7 @@ const PostarFoto = ({ data }) => {
   React.useEffect(() => {
     const username = data.username;
     if (dataFetch) router.push(`/Account/@${username}/Minhas-Fotos`);
-  }, [dataFetch, router]);
+  }, [dataFetch]);
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData();
