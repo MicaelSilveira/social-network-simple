@@ -122,7 +122,7 @@ a {
 .navHeaderUser a:focus,
 .navHeaderUser a:focus,
 .mobileButton:hover {
-  box-shadow: 0 0 0 3px #eee;
+  box-shadow: 0 0 0 3px white;
   border-color: #333;
   outline: none;
 }
