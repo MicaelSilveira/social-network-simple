@@ -56,6 +56,7 @@ function MyApp({ Component }) {
     const { url, options } = USER_GET(token);
     const response = await fetch(url, options);
     const json = await response.json();
+    window.localStorage.setItem("userID", json.id);
     setData(json);
     setLogin(true);
     setHeaderUser(true);
