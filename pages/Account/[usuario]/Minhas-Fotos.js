@@ -6,7 +6,7 @@ const MinhasFotos = ({ data }) => {
   if (data) {
     const userName = data.nome;
     return (
-      <div className={`${styles.minhasFotos}animeLeft`}>
+      <div className={`${styles.minhasFotos} animeLeft`}>
         <Head>
           <title> @{userName}| Minhas Fotos</title>
         </Head>
