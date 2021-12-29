@@ -2,7 +2,6 @@ import React from "react";
 import FeedPhotoItem from "./FeedPhotoItem";
 import useFetch from "../Hooks/useFetch";
 import { API_URL } from "../api";
-import Error from "../Helper/Error";
 import styles from "./FeedPhotos.module.css";
 const FeedPhotos = () => {
   const userID = window.localStorage.getItem("userID");
@@ -34,9 +33,7 @@ const FeedPhotos = () => {
   //   }
   //   fetchPhotos();
   // }, []);
-  if (error) <Error error={error} />;
   if (dataFetch) {
-    console.log(dataFetch);
     return (
       <ul className={`${styles.feed} animeLeft`}>
         {dataFetch.map((photo) => {
