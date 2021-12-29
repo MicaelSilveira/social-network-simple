@@ -1,5 +1,4 @@
 import React from "react";
-import FeedPhotoItem from "./FeedPhotoItem";
 import useFetch from "../Hooks/useFetch";
 import { API_URL } from "../api";
 import styles from "./FeedPhotos.module.css";
