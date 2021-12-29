@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Feed from "../../../src/Components/Feed/Feed";
+import FeedPhotos from "../../../src/Components/Feed/FeedPhotos";
 const MinhasFotos = ({ data }) => {
   if (data) {
     const userName = data.nome;
@@ -11,7 +11,7 @@ const MinhasFotos = ({ data }) => {
         </Head>
         <h1 className="title">Minhas fotos</h1>
         <section>
-          <Feed />
+          <FeedPhotos />
         </section>
       </div>
     );
