@@ -28,6 +28,11 @@
     grid-row: 1;
   }
 }
+@media (max-width: 27rem) {
+  .photo {
+    overflow: visible;
+  }
+}
 .author {
   display: flex;
   margin-bottom: 1rem;
