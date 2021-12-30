@@ -3,6 +3,7 @@ import useFetch from "../Hooks/useFetch";
 import { PHOTO_GET } from "../api";
 import Error from "next/error";
 import styles from "./FeedModal.module.css";
+import PhotoContent from "../Photo/PhotoContent";
 const FeedModal = ({ photo }) => {
   const { dataFetch, loadingFetch, error, request } = useFetch();
   React.useEffect(() => {
