@@ -5,7 +5,7 @@ const Estatisticas = ({ data }) => {
   if (data) {
     const userName = data.nome;
     return (
-      <div className="animeLeft">
+      <div className="animeLeft" style={{ height: "100vh" }}>
         <Head>
           <title> @{userName} | Estatisticas</title>
         </Head>

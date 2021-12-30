@@ -15,6 +15,7 @@ const FeedModal = ({ photo, setModalPhoto }) => {
   }
   return (
     <div className={styles.modal} onClick={handleOutsideClick}>
+      {loadingFetch && <p className="loading">Carregando</p>}
       {error && <Error error={error} />}
       {dataFetch && <PhotoContent data={dataFetch} />}
     </div>
