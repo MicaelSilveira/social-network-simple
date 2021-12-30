@@ -5,11 +5,11 @@ const PhotoContent = ({ data }) => {
   const { photo } = data;
   return (
     <div className={`${styles.photo} animeLeft`}>
-      <div>
+      <div className={styles.img}>
         <img src={photo.src} alt={photo.title} />
       </div>
       <div>
-        <div>
+        <div className={styles.details}>
           <p className={styles.author}>
             <Link href={`/Perfil/@${photo.author}`}>
               <a>@{photo.author}</a>
