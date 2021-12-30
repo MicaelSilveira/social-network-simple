@@ -14,7 +14,7 @@ const FeedModal = ({ photo, setModalPhoto }) => {
     if (event.target === event.currentTarget) setModalPhoto(null);
   }
   return (
-    <div className={styles.modal} onCLick={handleOutsideClick}>
+    <div className={styles.modal} onClick={handleOutsideClick}>
       {error && <Error error={error} />}
       {dataFetch && <PhotoContent data={dataFetch} />}
     </div>
