@@ -1,8 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./PhotoContent.module.css";
+import PhotoComments from "./PhotoComments";
 const PhotoContent = ({ data }) => {
-  const { photo } = data;
+  const { photo, comments } = data;
   return (
     <div className={`${styles.photo} animeLeft`}>
       <div className={styles.img}>
@@ -23,6 +24,7 @@ const PhotoContent = ({ data }) => {
           </h1>
         </div>
       </div>
+      <PhotoComments id={photo.id} comments={comments} />
     </div>
   );
 };

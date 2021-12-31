@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import FeedPublic from "../src/Components/FeedPublic/FeedPublic";
 export default function Home({ loading }) {
   return (
     <div className={styles.container}>
@@ -9,7 +9,9 @@ export default function Home({ loading }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.test}>Home</div>
+      <div>
+        <FeedPublic />
+      </div>
     </div>
   );
 }
