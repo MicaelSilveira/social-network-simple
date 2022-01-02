@@ -7,6 +7,7 @@
   grid-template-columns: 36rem 20rem;
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
+  padding: 0px;
 }
 .details {
   padding: 2rem 2rem 0 2rem;
@@ -28,10 +29,12 @@
     grid-row: 1;
   }
 }
-@media (max-width: 27rem) {
+@media (max-width: 25rem) {
   .photo {
     padding: 0px;
-    overflow: auto;
+    height: 450px;
+    position: absolute;
+    left: -10px;
   }
 }
 .author {

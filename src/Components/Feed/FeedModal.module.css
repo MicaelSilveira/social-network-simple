@@ -16,3 +16,11 @@
     padding: 2rem calc(2rem + 20px) 2rem 2rem;
   }
 }
+@media (max-width: 25rem) {
+  .modal::after {
+    position: absolute;
+    content: "Clique aqui para voltar";
+    bottom: 20px;
+    color: white;
+  }
+}
