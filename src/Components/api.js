@@ -1,4 +1,4 @@
-export const API_URL = "http://apiredesocial.onlinewebshop.net/json";
+export const API_URL = "https://dogsapi.origamid.dev/json";
 export function TOKEN_POST(body) {
   return {
     url: API_URL + "/jwt-auth/v1/token",
@@ -59,7 +59,9 @@ export function PHOTO_POST(formData, token) {
 }
 export function PHOTOS_GET() {
   return {
-    url: `${API_URL}/api/photo/?_page=${2}&_total=${6}&_user=${0}`,
+    url: `${API_URL}/api/photo/?_page=${0}&_total=${6}&_user=${window.localStorage.getItem(
+      "userID"
+    )}`,
     options: {
       method: "GET",
       cache: "no-store",
