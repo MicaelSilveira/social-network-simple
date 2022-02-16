@@ -6,6 +6,9 @@ import FeedPhotoItem from "../Feed/FeedPhotoItem";
 const FeedPhotos = ({ setModalPhoto }) => {
   const { dataFetch, loadingFetch, request } = useFetch();
   React.useEffect(() => {
+    if (!window.localStorage.getItem("userID")) {
+      window.localStorage.setItem("userID", "1");
+    }
     async function fetchPhotos() {
       const { url, options } = PHOTOS_GET();
       await request(url, options);
