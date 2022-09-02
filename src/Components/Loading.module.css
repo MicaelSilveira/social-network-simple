@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 2000;
+  align-items: center;
+  flex-direction: column;
+}
+.loader {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  animation: rotating 1s infinite;
+  width: 40px;
+  height: 40px;
+  border: solid #555;
+  border-top-color: #302b63;
+  border-radius: 50%;
+}
+@keyframes rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}

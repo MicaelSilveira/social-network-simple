@@ -1,9 +1,10 @@
-import React from "react";
-import useFetch from "../Hooks/useFetch";
-import { PHOTO_GET } from "../api";
 import Error from "next/error";
-import styles from "./FeedModal.module.css";
+import React from "react";
+import { PHOTO_GET } from "../api";
+import useFetch from "../Hooks/useFetch";
+import Loading from "../Loading";
 import PhotoContent from "../Photo/PhotoContent";
+import styles from "./FeedModal.module.css";
 const FeedModal = ({ photo, setModalPhoto }) => {
   const { dataFetch, loadingFetch, error, request } = useFetch();
   React.useEffect(() => {
@@ -15,7 +16,7 @@ const FeedModal = ({ photo, setModalPhoto }) => {
   }
   return (
     <div className={styles.modal} onClick={handleOutsideClick}>
-      {loadingFetch && <p className="loading">Carregando</p>}
+      {loadingFetch && <Loading />}
       {error && <Error error={error} />}
       {dataFetch && <PhotoContent data={dataFetch} />}
     </div>

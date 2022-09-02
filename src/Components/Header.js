@@ -1,9 +1,9 @@
-import Link from "next/link";
-import styles from "./Header.module.css";
-import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Logo from "../Assets/Logo.svg";
+import styles from "./Header.module.css";
 import HeaderUser from "./HeaderUser";
+import Loading from "./Loading";
 const Header = ({ data, headerUser, setHeaderUser, userLogout, loading }) => {
   return (
     <header className={styles.header}>
@@ -13,7 +13,7 @@ const Header = ({ data, headerUser, setHeaderUser, userLogout, loading }) => {
             <Image src={Logo} className={styles.logo} />
           </a>
         </Link>
-        {loading && <h1 className="loading animeLeft">Aguarde...</h1>}
+        {loading && <Loading />}
         {data ? (
           <>
             <Link href={`/Account/@${data.nome}`}>
