@@ -1,12 +1,11 @@
-import React from "react";
-import Button from "../../src/Components/Forms/Button";
-import Input from "../../src/Components/Forms/Input";
-import useForm from "../../src/Components/Hooks/useForm";
-import Error from "../../src/Components/Helper/Error";
-import styles from "../../styles/Login-Form.module.css";
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Head from "next/head";
+import Button from "../../src/Components/Forms/Button";
+import Input from "../../src/Components/Forms/Input";
+import Error from "../../src/Components/Helper/Error";
+import useForm from "../../src/Components/Hooks/useForm";
+import styles from "../../styles/Login-Form.module.css";
 const LoginForm = ({ userLogin, loading, erro, login, data }) => {
   const router = useRouter();
   if (login) router.push(`/Account/@${data.username}`);
@@ -26,24 +25,24 @@ const LoginForm = ({ userLogin, loading, erro, login, data }) => {
       <section className="animeLeft">
         <h1 className="title">Login</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
-          <Input label="Usuario" type="text" name="usuario" {...username} />
+          <Input label="User" type="text" name="usuario" {...username} />
 
-          <Input label="Senha" type="password" name="senha" {...password} />
+          <Input label="Password" type="password" name="senha" {...password} />
           {loading ? (
-            <Button disabled>Carregando...</Button>
+            <Button disabled>Loading...</Button>
           ) : (
-            <Button>Entrar</Button>
+            <Button>Enter</Button>
           )}
           <Error error={erro} />
         </form>
         <Link href="/User/Login-SenhaPerdida">
-          <a className={styles.perdeu}>Perdeu a Senha?</a>
+          <a className={styles.perdeu}>lost password ?</a>
         </Link>
         <div className={styles.cadastro}>
-          <h2 className={styles.subtitle}>Cadastre-se</h2>
-          <p>Ainda não possui conta ?</p>
+          <h2 className={styles.subtitle}>Create</h2>
+          <p>Don't have an account yet ?</p>
           <Link href="/User/Login-CriarUsuario">
-            <Button>Cadastro</Button>
+            <Button>Create</Button>
           </Link>
         </div>
       </section>

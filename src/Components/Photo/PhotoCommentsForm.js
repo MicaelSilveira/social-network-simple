@@ -1,9 +1,9 @@
+import Image from "next/image";
 import React from "react";
 import EnviarInput from "../../Assets/EnviarInput.svg";
 import { COMMENT_POST } from "../api";
-import Image from "next/image";
-import useFetch from "../Hooks/useFetch";
 import Error from "../Helper/Error";
+import useFetch from "../Hooks/useFetch";
 import styles from "./PhotoCommentsForm.module.css";
 const PhotoCommentsForm = ({ id, setComments }) => {
   const { request, error, loadingFetch } = useFetch();
@@ -25,14 +25,14 @@ const PhotoCommentsForm = ({ id, setComments }) => {
         className={styles.textArea}
         id="comment"
         name="comment"
-        placeholder="Comente"
+        placeholder="Comment"
         value={comment}
         onChange={({ target }) => setComment(target.value)}
         ref={inputRef}
       />
 
       <button name="button" className={styles.button}>
-        {loadingFetch ? "Enviando" : <Image src={EnviarInput} />}
+        {loadingFetch ? "Sending" : <Image src={EnviarInput} />}
       </button>
 
       <Error error={error} />

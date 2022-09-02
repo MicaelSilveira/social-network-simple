@@ -1,7 +1,5 @@
-import React from "react";
-
 const LoginSenhaReset = () => {
-  return <div>Login SEnha</div>;
+  return <div>Unavailable service</div>;
 };
 
 export default LoginSenhaReset;

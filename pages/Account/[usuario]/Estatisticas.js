@@ -1,4 +1,3 @@
-import React from "react";
 import Head from "next/head";
 
 const Estatisticas = ({ data }) => {
@@ -9,7 +8,7 @@ const Estatisticas = ({ data }) => {
         <Head>
           <title> @{userName} | Estatisticas</title>
         </Head>
-        <h1 className="title">Estatisticas</h1>
+        <h1 className="title">Statistics</h1>
       </div>
     );
   } else return null;

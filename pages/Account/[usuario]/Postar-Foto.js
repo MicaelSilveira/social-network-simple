@@ -34,10 +34,10 @@ const PostarFoto = ({ data }) => {
   if (data) {
     return (
       <div className="animeLeft">
-        <h1 className="title">Postar Foto</h1>
+        <h1 className="title">Post photo</h1>
         <section className={`${styles.photoPost}`}>
           <form onSubmit={handleSubmit}>
-            <Input label="Nome" type="text" name="name" {...nome} />
+            <Input label="Name" type="text" name="name" {...nome} />
             <input
               className={styles.file}
               type="file"
@@ -46,9 +46,9 @@ const PostarFoto = ({ data }) => {
               onChange={handleChange}
             />
             {loadingFetch ? (
-              <Button disabled>Enviando</Button>
+              <Button disabled>Sending</Button>
             ) : (
-              <Button>Enviar</Button>
+              <Button>Send</Button>
             )}
           </form>
           <div>

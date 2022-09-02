@@ -1,4 +1,3 @@
-import React from "react";
 import Head from "next/head";
 const usuario = ({ data }) => {
   if (data) {
@@ -8,7 +7,7 @@ const usuario = ({ data }) => {
         <Head>
           <title>{`Conta | @${userName}`}</title>
         </Head>
-        <h1>Bem vindo: {userName}</h1>
+        <h1>Welcome: {userName}</h1>
       </div>
     );
   } else return null;

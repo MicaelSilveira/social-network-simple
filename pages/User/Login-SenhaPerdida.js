@@ -1,9 +1,7 @@
-import React from "react";
-
 const LoginSenhaPerdida = () => {
   return (
     <div>
-      <h1>Serviço indisponivel</h1>
+      <h1>Unavailable service</h1>
     </div>
   );
 };

@@ -1,13 +1,12 @@
-import React from "react";
-import Input from "../../src/Components/Forms/Input";
-import Button from "../../src/Components/Forms/Button";
-import useForm from "../../src/Components/Hooks/useForm";
-import { USER_POST } from "../../src/Components/api";
-import styles from "../../styles/Login-Criar.module.css";
-import Error from "../../src/Components/Helper/Error";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { USER_POST } from "../../src/Components/api";
+import Button from "../../src/Components/Forms/Button";
+import Input from "../../src/Components/Forms/Input";
+import Error from "../../src/Components/Helper/Error";
 import useFetch from "../../src/Components/Hooks/useFetch";
+import useForm from "../../src/Components/Hooks/useForm";
+import styles from "../../styles/Login-Criar.module.css";
 const LoginCriarUsuario = ({ userLogin, login, data }) => {
   const { loadingFetch, request, error } = useFetch();
   const router = useRouter();
@@ -33,15 +32,20 @@ const LoginCriarUsuario = ({ userLogin, login, data }) => {
         <Head>
           <title>Login | CriarUsuario</title>
         </Head>
-        <h1 className="title">Cadastre-se</h1>
+        <h1 className="title">Create</h1>
         <form onSubmit={handleSubmit}>
-          <Input label="Usuario" type="text" name="username" {...username} />
+          <Input label="User" type="text" name="username" {...username} />
           <Input label="Email" type="email" name="email" {...email} />
-          <Input label="Senha" type="password" name="password" {...password} />
+          <Input
+            label="Password"
+            type="password"
+            name="password"
+            {...password}
+          />
           {loadingFetch ? (
-            <Button disabled>Cadastrando...</Button>
+            <Button disabled>Creating...</Button>
           ) : (
-            <Button>Cadastre-se</Button>
+            <Button>Create</Button>
           )}
         </form>
         <Error error={error} />
