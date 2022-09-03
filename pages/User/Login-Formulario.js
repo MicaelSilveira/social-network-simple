@@ -40,7 +40,7 @@ const LoginForm = ({ userLogin, loading, erro, login, data }) => {
         </Link>
         <div className={styles.cadastro}>
           <h2 className={styles.subtitle}>Create</h2>
-          <p>Don't have an account yet ?</p>
+          <p>Don t have an account yet ?</p>
           <Link href="/User/Login-CriarUsuario">
             <Button>Create</Button>
           </Link>
